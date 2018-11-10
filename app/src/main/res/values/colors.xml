@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/palleteaccentpurpledark</color>
+    <color name="colorPrimaryDark">@color/palletepurpledark</color>
+    <color name="colorAccent">@color/palleteaccentpink</color>
+    <color name="primary">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#455A64</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="event_color_01">#59dbe0</color>
+    <color name="event_color_02">#f57f68</color>
+    <color name="event_color_03">#87d288</color>
+    <color name="event_color_04">#f8b552</color>
+    <color name="toolbar">#efefef</color>
+    <color name="txtHintColor">#b5b5b5</color>
+    <color name="toolbar_text">#8f000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorPurple">#913e98</color>
+    <color name="colorBlack">#333333</color>
+    <color name="colorGray">#777777</color>
+    <color name="colorYoungGray">#aaaaaa</color>
+    <color name="colorTransparent">#00ffffff</color>
+    <color name="colorGreyBlack">#555555</color>
+    <color name="colorGreen">#82bd2a</color>
+    <color name="colorSinyalLemah">#d03636</color>
+    <color name="colorSinyalSedang">#eb8d1d</color>
+    <color name="colorSinyalKuat">#9dc85d</color>
+
+
+    <!-- Theme Purple   -->
+    <color name="palleteaccentpurpledark">#6458B7</color>
+    <color name="palletepurpledark">#44157E</color>
+    <color name="palletepurplesoft">#9261D3</color>
+    <color name="palletepurplebg">#C1AEDD</color>
+    <color name="palletebgpink">#F7DEE3</color>
+    <color name="palleteaccentpink">#FC797E</color>
+    <color name="palleteaccentcyan">#50C1E6</color>
+    <color name="palletewhite">#FCFBFD</color>
+    <color name="palletegreydark">#E8EBEE</color>
+    <color name="palletegreysoft">#E0DAE8</color>
+    <color name="dot_inactive_screen1">#ffa000</color>
+    <color name="dot_inactive_screen2">#008c57</color>
+    <color name="dot_inactive_screen3">#0e1e49</color>
+    <!-- dots active colors -->
+    <color name="dot_active_screen1">#f9c772</color>
+    <color name="dot_active_screen2">#74f7c5</color>
+    <color name="dot_active_screen3">#3a67e0</color>
+    <array name="array_dot_active">
+        <item>@color/palleteaccentcyan</item>
+        <item>@color/palleteaccentcyan</item>
+        <item>@color/palleteaccentcyan</item>
+    </array>
+    <array name="array_dot_inactive">
+        <item>@color/palletewhite</item>
+        <item>@color/palletewhite</item>
+        <item>@color/palletewhite</item>
+    </array>
+
+</resources>

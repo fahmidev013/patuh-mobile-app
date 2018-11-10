@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="1.8"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_home" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TUKAR POIN"
+            android:gravity="center"
+            android:layout_weight="1.6"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:layout_gravity="center_vertical|end"
+            android:src="@drawable/ic_home" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_10dp"
+        android:background="@color/palleteaccentpurpledark"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/size_25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size_5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_126dp"
+                    android:src="@drawable/patuhcontent"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100 POIN"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gratis 5 Liter Pertamax"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TUKAR"
+                    android:padding="@dimen/size_6dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/palletepurpledark"/>
+
+
+            </RelativeLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="NAMA"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="TANGGAL LAHIR"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="LOKASI"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="NO TELPON"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="EMAIL"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="KATA SANDI"
+                android:background="@color/palletegreydark"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:layout_marginLeft="@dimen/size_8dp"
+                    android:text="Saya menyetujui syarat dan ketentuan berlaku"
+                    android:textColor="@color/palletepurpledark" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|bottom"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:text="SIMPAN"
+                    android:textColor="@color/palletewhite"
+                    android:background="@color/palleteaccentpurpledark"/>
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:layout_marginLeft="@dimen/size_56dp"
+                    android:text="BATAL"
+                    android:textColor="@color/palletewhite"
+                    android:background="@color/palleteaccentpurpledark"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

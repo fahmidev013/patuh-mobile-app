@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="app.patuhmobile.module.Ujian.UjianFragment">
+
+    <RelativeLayout
+        android:id="@+id/btnsima"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true"
+            android:src="@drawable/car_license"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_56dp"
+            android:src="@drawable/pic_mobil"/>
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_size_25sp"
+            android:text="SIM A"/>-->
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/btnsimc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="@dimen/size_126dp"
+            android:layout_height="@dimen/size_126dp"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true"
+            android:src="@drawable/motor_license"/>
+
+
+        <ImageView
+            android:layout_width="@dimen/size_76dp"
+            android:layout_height="@dimen/size_76dp"
+            android:scaleType="fitXY"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_56dp"
+            android:src="@drawable/pic_motor"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragcontainer"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="@dimen/size_30dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_action_warning"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:text="PILIH ALASAN KENAPA ANDA MELAPORKAN KONTEN INI?"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_reason1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/palletegreysoft"
+            android:layout_margin="@dimen/size_5dp"
+            android:padding="@dimen/size_10dp"
+            android:layout_weight="1"
+            android:text="A. KONTEN BERISI SARA ATAU PORNOGRAFI"/>
+
+        <TextView
+            android:id="@+id/tv_reason2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/palletegreysoft"
+            android:layout_margin="@dimen/size_5dp"
+            android:padding="@dimen/size_10dp"
+            android:layout_weight="1"
+            android:text="B. KONTEN FIKTIF ATAU TIDAK JELAS"/>
+
+        <TextView
+            android:id="@+id/tv_reason3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/palletegreysoft"
+            android:layout_margin="@dimen/size_5dp"
+            android:padding="@dimen/size_10dp"
+            android:text="A. KONTEN BERISI SARA ATAU PORNOGRAFI"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/size_10dp"
+            android:background="@color/palleteaccentcyan"
+            android:text="CANCEL"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

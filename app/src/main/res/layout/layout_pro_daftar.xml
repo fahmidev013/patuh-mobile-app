@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:tint="@color/colorBlack"
+            android:src="@drawable/ic_keyboard_arrow_left" />
+
+        <TextView
+            android:id="@+id/tv_daftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DAFTAR"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_5dp"
+            android:layout_weight="0.7"
+            android:background="@color/palleteaccentcyan"/>
+
+        <View
+            android:layout_weight="1.3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_5dp"
+            android:background="@color/palleteaccentpurpledark"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/size_25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size_5dp">
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="@dimen/size_126dp"
+                android:layout_height="@dimen/size_126dp"
+                android:src="@drawable/daftar_ic_profile"
+                android:scaleType="fitXY"/>
+
+            <EditText
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="NAMA"
+                android:maxLines="1"
+                android:inputType="textCapWords"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:id="@+id/etTgLahir"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="TANGGAL LAHIR (Cth : dd/MM/YYYY)"
+                android:maxLines="1"
+                android:inputType="date"
+                android:ems="10"
+                android:maxLength="10"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:id="@+id/etLokasi"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="LOKASI"
+                android:maxLines="1"
+                android:inputType="textCapSentences"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:id="@+id/etHP"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="NO TELPON"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:ems="13"
+                android:maxLength="13"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="EMAIL"
+                android:inputType="textEmailAddress"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:id="@+id/etUserid"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="USER ID"
+                android:maxLines="1"
+                android:inputType="text"
+                android:background="@color/palletegreydark"/>
+
+            <EditText
+                android:id="@+id/etPasswd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:hint="KATA SANDI"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:background="@color/palletegreydark"/>
+
+            <LinearLayout
+                android:id="@+id/ll_sk"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_20dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cbSK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:layout_marginLeft="@dimen/size_8dp"
+                    android:text="Saya menyetujui syarat dan ketentuan berlaku"
+                    android:textColor="@color/palletepurpledark" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_30dp"
+                android:gravity="center|bottom"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_simpan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:text="DAFTAR"
+                    android:textColor="@color/palletewhite"
+                    android:background="@color/palleteaccentpurpledark"/>
+
+
+                <Button
+                    android:id="@+id/btn_batal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:layout_marginLeft="@dimen/size_56dp"
+                    android:text="BATAL"
+                    android:textColor="@color/palletewhite"
+                    android:background="@color/palleteaccentpurpledark"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

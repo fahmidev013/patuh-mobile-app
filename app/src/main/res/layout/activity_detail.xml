@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.patuhmobile.module.Home.DetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/background_progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background ="#99000000"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+        <at.grabner.circleprogress.CircleProgressView
+            android:id="@+id/circleView"
+            android:layout_width="177dp"
+            android:layout_height="177dp"
+            app:cpv_autoTextSize="true"
+            app:cpv_barColor="@color/primary"
+            app:cpv_barWidth="35dp"
+            app:cpv_innerContourSize="0dp"
+            app:cpv_maxValue="100"
+            app:cpv_outerContourSize="0dp"
+            app:cpv_rimColor="@color/primary_light"
+            app:cpv_rimWidth="35dp"
+            app:cpv_seekMode="true"
+            app:cpv_showUnit="true"
+            app:cpv_spinColor="@color/primary"
+            app:cpv_textColor="@color/primary_dark"
+            app:cpv_textScale="1"
+            app:cpv_unit="%"
+            app:cpv_unitColor="@color/primary_light"
+            app:cpv_unitPosition="right_top"
+            app:cpv_unitScale="1"
+            app:cpv_value="10" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"></FrameLayout>
+
+</RelativeLayout>

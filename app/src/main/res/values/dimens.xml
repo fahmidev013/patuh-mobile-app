@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_220dp">220dp</dimen>
+    <dimen name="size_186dp">186dp</dimen>
+    <dimen name="size_126dp">126dp</dimen>
+    <dimen name="size_96dp">96dp</dimen>
+    <dimen name="size_76dp">76dp</dimen>
+    <dimen name="size_56dp">56dp</dimen>
+    <dimen name="size_35dp">35dp</dimen>
+    <dimen name="size_btn_back">35dp</dimen>
+    <dimen name="size_10dp">10dp</dimen>
+    <dimen name="text_size19">19sp</dimen>
+    <dimen name="size_circle_image">48dp</dimen>
+    <dimen name="size_20dp">16dp</dimen>
+    <dimen name="size_3dp">3dp</dimen>
+    <dimen name="text_size_25sp">25sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="size_6dp">6dp</dimen>
+    <dimen name="size_8dp">8dp</dimen>
+    <dimen name="text_size_10sp">10sp</dimen>
+    <dimen name="size_12dp">12dp</dimen>
+    <dimen name="size_30dp">30dp</dimen>
+    <dimen name="size_5dp">5dp</dimen>
+    <dimen name="size_25dp">25dp</dimen>
+    <dimen name="text_38dp">38dp</dimen>
+    <dimen name="size_4dp">4dp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="size_15dp">15dp</dimen>
+    <dimen name="size_1dp">1dp</dimen>
+    <dimen name="size_7dp">7dp</dimen>
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="img_width_height">150dp</dimen>
+    <dimen name="slide_title">30dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+
+</resources>

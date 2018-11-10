@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/slider3">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/slider3pic"
+        android:layout_marginTop="200dp"/>
+
+    <!--<ImageView
+        android:id="@+id/imageView2"
+        android:layout_above="@+id/btnmulaisstiga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/size_10dp"
+        android:src="@drawable/btn_slider_dua" />
+
+    <Button
+        android:id="@+id/btnmulaisstiga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/size_30dp"
+        android:background="@color/palletewhite"
+        android:text="MULAI"
+        android:textColor="@color/colorBlack" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/size_20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="@string/slide_1_title"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/slide_title"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:layout_marginTop="@dimen/size_20dp"
+                    android:text="@string/slide_1_desc"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/slide_desc" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

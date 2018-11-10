@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jota.autocompletelocation:autocomplete-location-0.9.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/autocomplete-location-0.9.0.aar/dc82819dabae59e42244fe8c94157e42/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/autocomplete-location-0.9.0.aar/dc82819dabae59e42244fe8c94157e42/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jota.autocompletelocation/autocomplete-location/0.9.0/1775091d6cdc87d76fceb59d60973eab90186c73/autocomplete-location-0.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv_kupon"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/size_5dp"
+    app:cardElevation="@dimen/size_5dp"
+    app:cardBackgroundColor="@color/palletegreydark"
+    android:layout_margin="@dimen/size_10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_5dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/tukarpoinbgdua"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_15dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_poin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/palletewhite"
+                    android:textStyle="bold"
+                    android:text="100 POIN"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_kupon_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/palletewhite"
+                    android:text="GRATIS 5 LITER PERTAMAX"
+                    />
+
+            </LinearLayout>
+
+            <!--<FrameLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="#aa000000">-->
+            <!--</FrameLayout>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/palletewhite"-->
+                <!--android:textSize="@dimen/text_size_25sp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:text="POIN TIDAK CUKUP"/>-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.CardView>

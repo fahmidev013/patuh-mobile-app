@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:tint="@color/palletepurpledark"
+            android:src="@drawable/ic_logo_white"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:scaleType="fitXY"/>
+
+
+        <TextView
+            android:id="@+id/hargai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size_30dp"
+            android:text="TERUS\nSEBARKAN\nKEPATUHAN"
+            android:textAlignment="center" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LANJUT"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:textColor="@color/palletewhite"
+            android:background="@color/palleteaccentpurpledark"/>
+
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/hargaiketaatan_bg"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

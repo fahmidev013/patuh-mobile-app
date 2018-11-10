@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:tint="@color/colorBlack"
+            android:src="@drawable/ic_keyboard_arrow_left" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LUPA KATA SANDI"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_5dp"
+            android:layout_weight="0.7"
+            android:background="@color/palleteaccentcyan"/>
+
+        <View
+            android:layout_weight="1.3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_5dp"
+            android:background="@color/palleteaccentpurpledark"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/size_25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_5dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_30dp"
+            android:hint="Email"
+            android:background="@color/palletegreydark"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_30dp"
+            android:layout_marginTop="@dimen/size_30dp"
+            android:hint="Kata Sandi"
+            android:background="@color/palletegreydark"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_30dp"
+            android:layout_marginTop="@dimen/size_30dp"
+            android:hint="Ulangi Kata Sandi Baru"
+            android:background="@color/palletegreydark"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/simpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:text="SIMPAN"
+                android:textColor="@color/palletewhite"
+                android:background="@color/palleteaccentpurpledark"/>
+
+
+            <Button
+                android:id="@+id/batal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginLeft="@dimen/size_56dp"
+                android:text="BATAL"
+                android:textColor="@color/palletewhite"
+                android:background="@color/palleteaccentpurpledark"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

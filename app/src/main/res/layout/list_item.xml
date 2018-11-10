@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    card_view:contentPadding="7dp"
+    card_view:cardCornerRadius="7dp"
+    card_view:cardElevation="7dp"
+    android:layout_margin="7dp">
+
+    <ImageView
+        android:id="@+id/btn_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/patuhcontent"
+        android:scaleType="fitCenter"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <!-- TextView Nama Mahasiwa -->
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/palletewhite"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_25sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="@dimen/size_30dp"
+                android:layout_height="@dimen/size_30dp"
+                android:src="@drawable/pic_galgadot"
+                android:scaleType="fitXY"/>
+
+            <!-- TextView NoHp Mahasiswa -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_action_location"/>
+                <TextView
+                    android:id="@+id/txt_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_8dp"
+                    android:textColor="@color/palletewhite"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:text="Mampang Prapatan"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <!-- TextView Npm Mahasiswa -->
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
