@@ -34,6 +34,7 @@ import app.patuhmobile.module.Home.Cerita.DetailCeritaFragment;
 import app.patuhmobile.module.Home.Panutan.DetailPanutanFragment;
 import app.patuhmobile.module.Home.Panutan.PanutanFragment;
 import app.patuhmobile.module.Home.events.CallParentActivity;
+import app.patuhmobile.module.KuponSaya.KuponSayaFragment;
 import app.patuhmobile.module.Login.LoginActivity;
 import app.patuhmobile.module.Notif.NotifFragment;
 import app.patuhmobile.module.Profile.ProfileFragment;
@@ -61,6 +62,7 @@ public class HomeActivity extends BaseActivity implements HomeView,
         UploadFragment.OnFragmentInteractionListener,
         ActivityCompat.OnRequestPermissionsResultCallback,
         DetailCeritaFragment.OnFragmentInteractionListener,
+        KuponSayaFragment.OnFragmentInteractionListener,
         PermissionUtil.PermissionResultCallback {
 
 
@@ -223,8 +225,8 @@ public class HomeActivity extends BaseActivity implements HomeView,
     }
 
     @Override
-    public void onTukarpoinFragmentInteraction(Uri uri) {
-
+    public void onTukarpoinFragmentInteraction() {
+        loadFragment(KuponSayaFragment.newInstance(null, null), R.id.fragment_container, AppConfig.FRAG_NAV_BTM_KUPON_SAYA);
     }
 
 
@@ -393,4 +395,8 @@ public class HomeActivity extends BaseActivity implements HomeView,
         }*/
     }
 
+    @Override
+    public void onKuponSayaFragmentInteraction(Uri uri) {
+
+    }
 }

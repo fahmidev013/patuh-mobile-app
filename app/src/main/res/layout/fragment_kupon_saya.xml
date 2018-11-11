@@ -18,13 +18,13 @@
             android:tint="@color/colorBlack"
             android:src="@drawable/ic_keyboard_arrow_left" />
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textStyle="bold"
-            android:text="TUKAR POIN"
+            android:text="KUPON SAYA"
             android:textSize="@dimen/text_size19"
             android:layout_gravity="center"/>
 
@@ -50,62 +50,9 @@
             android:background="@color/palleteaccentpurpledark"/>
     </LinearLayout>
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:padding="@dimen/size_35dp"
-        android:layout_height="160dp">
-
-        <ImageView
-            android:id="@+id/tukarpoin_picimgv"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitXY"
-            android:layout_centerVertical="true"
-            android:src="@drawable/pic_galgadot"/>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="end"
-            android:layout_centerVertical="true">
-
-
-            <TextView
-                android:id="@+id/tukarpoin_usertv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/text_size_12sp"
-                android:text="GalGadot "/>
-
-            <TextView
-                android:id="@+id/tukarpoin_pointv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="@dimen/text_size_25sp"
-                android:text="48.250"/>
-
-            <Button
-                android:id="@+id/btn_kupon_saya"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/palletewhite"
-                android:background="@color/palletepurpledark"
-                android:textSize="@dimen/text_size_14sp"
-                android:text="Kupon Saya"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <View android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="#000000" />
+    <!--<View android:layout_width="fill_parent"-->
+        <!--android:layout_height="1dip"-->
+        <!--android:background="#000000" />-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -118,12 +65,6 @@
             android:layout_height="match_parent"
             android:padding="@dimen/size_15dp"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size19"
-                android:text="DAFTAR KUPON"/>
 
 
             <android.support.v7.widget.RecyclerView

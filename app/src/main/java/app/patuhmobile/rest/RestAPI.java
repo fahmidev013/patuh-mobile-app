@@ -93,8 +93,17 @@ public interface RestAPI {
                                       @Part("Id") RequestBody id);
 
 
+
+    @FormUrlEncoded
+    @Headers({
+            "Accept: application/json",
+            "Content-Type: application/x-www-form-urlencoded"
+    })
+    @POST("Coupon")
+    Observable<ResponeApiModel> postCoupon(@Field("msCouponId") String kuponId, @Field("UserId") String userId);
+
     @GET("Coupon")
-    Observable<List<Kupon>> getAllKupon();
+    Observable<ArrayList<Kupon>> getAllKupon();
 
     @GET("Coupon")
     Observable<List<TukarKupon>> getKuponByUser(@Query("userId") String uid);

@@ -5,6 +5,7 @@ package app.patuhmobile;
 public class AppConfig {
     public static final String FRAG_NAV_DETAIL_CONTENT = "Content";
     public static final String FRAG_NAV_BTM_HOME = "Home";
+    public static final String FRAG_NAV_BTM_KUPON_SAYA = "KuponSaya";
     public static final String FRAG_NAV_BTM_UJIAN = "Ujian";
     public static final String FRAG_NAV_BTM_KUPON = "Kupon";
     public static final String FRAG_NAV_BTM_NOTIF = "Notif";

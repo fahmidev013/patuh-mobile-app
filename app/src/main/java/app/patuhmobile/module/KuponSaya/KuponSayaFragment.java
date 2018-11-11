@@ -1,19 +1,16 @@
-package app.patuhmobile.module.TukarPoin;
+package app.patuhmobile.module.KuponSaya;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,31 +27,30 @@ import app.patuhmobile.R;
 import app.patuhmobile.auth.AuthInfo;
 import app.patuhmobile.auth.AuthService;
 import app.patuhmobile.core.BaseFragment;
-import app.patuhmobile.model.Artikel;
 import app.patuhmobile.model.Kupon;
-import app.patuhmobile.model.Point;
 import app.patuhmobile.model.ResponeApiModel;
+import app.patuhmobile.model.TukarKupon;
+import app.patuhmobile.module.adapter.AdapterKuponRecview;
 import app.patuhmobile.module.adapter.AdapterRecview;
-import app.patuhmobile.module.adapter.HorizontalRecycleViewAdapter;
 import app.patuhmobile.utils.DialogUtils;
 import app.patuhmobile.utils.NetworkUtils;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link TukarPoinFragment.OnFragmentInteractionListener} interface
+ * {@link KuponSayaFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link TukarPoinFragment#newInstance} factory method to
+ * Use the {@link KuponSayaFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
+public class KuponSayaFragment extends BaseFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
 
-    List<Kupon> kuponList = new ArrayList<>();
+    List<TukarKupon> kuponList = new ArrayList<>();
     private AuthService authService;
     private App mApp;
     private AuthInfo session;
@@ -69,12 +65,9 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
 
     private RecyclerView mRecycleViewKupon;
     private RecyclerView.LayoutManager mLayoutManager;
-    private TextView tvUser, tvPoin;
-    private Button btnKuponSaya;
-    private ImageView imgPic;
-    AdapterRecview adapter;
+    AdapterKuponRecview adapter;
 
-    public TukarPoinFragment() {
+    public KuponSayaFragment() {
         // Required empty public constructor
     }
 
@@ -87,8 +80,8 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
      * @return A new instance of fragment TukarPoinFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TukarPoinFragment newInstance(String param1, String param2) {
-        TukarPoinFragment fragment = new TukarPoinFragment();
+    public static KuponSayaFragment newInstance(String param1, String param2) {
+        KuponSayaFragment fragment = new KuponSayaFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -115,7 +108,7 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mView = inflater.inflate(R.layout.fragment_tukar_poin, container, false);
+        mView = inflater.inflate(R.layout.fragment_kupon_saya, container, false);
         return mView;
     }
 
@@ -124,36 +117,13 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        tvUser = (TextView) mView.findViewById(R.id.tukarpoin_usertv);
-        tvPoin = (TextView) mView.findViewById(R.id.tukarpoin_pointv);
-        imgPic = (ImageView) mView.findViewById(R.id.tukarpoin_picimgv);
-        btnKuponSaya = (Button) mView.findViewById(R.id.btn_kupon_saya);
-        btnKuponSaya.setOnClickListener(view1 -> mListener.onTukarpoinFragmentInteraction());
         mRecycleViewKupon = (RecyclerView) mView.findViewById(R.id.rv_kupon);
         mRecycleViewKupon.setHasFixedSize(true);
-        adapter = new AdapterRecview(kuponList, new AdapterRecview.KuponAdapterCallback() {
+        adapter = new AdapterKuponRecview(kuponList, new AdapterKuponRecview.KuponAdapterCallback() {
             @Override
-            public void onClicked(Kupon kupon, int position) {
-                dialog.setMessage("Menukar kupon, mohon menunggu..");
-                dialog.setCancelable(false);
-                dialog.show();
-                authService.tukarKupon(kupon.getId(), session.getUserId(), new AuthService.DataCallback() {
-                    @Override
-                    public void onSuccess(ResponeApiModel responeRegisterModel) {
-                        if (dialog.isShowing()) {
-                            dialog.dismiss();
-                        }
-                        Toast.makeText(getActivity(), "Berhasil, kode kupon" + responeRegisterModel.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
+            public void onClicked(TukarKupon kupon, int position) {
 
-                    @Override
-                    public void onFail(Throwable e) {
-                        if (dialog.isShowing()) {
-                            dialog.dismiss();
-                        }
-                        Toast.makeText(getActivity(), "GAGAL!!" + e, Toast.LENGTH_SHORT).show();
-                    }
-                });
+
             }
         });
         mLayoutManager = new LinearLayoutManager(getActivity());
@@ -162,36 +132,6 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
         mRecycleViewKupon.setNestedScrollingEnabled(false);
         mRecycleViewKupon.setAdapter(adapter);
 
-        if (session.getUserId() != null){
-            dialog.setMessage("Menampilkan data, mohon menunggu..");
-            dialog.setCancelable(false);
-            dialog.show();
-            if (NetworkUtils.isOnline(mApp.getBaseContext())){
-                Glide.with(this)
-                        .load(AppConfig.API_BASE_URL + "UserProfile/GetProfilePic?UserId=" + session.getUserId())
-                        .animate(R.anim.abc_fade_in)
-                        .centerCrop()
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .skipMemoryCache(true)
-                        .into(imgPic);
-                tvUser.setText(session.getUsername());
-                authService.getPoints(session.getUserId(), new AuthService.PointCallback() {
-                    @Override
-                    public void onSuccess(Point point) {
-                        tvPoin.setText(String.valueOf(point.getPoint()));
-                    }
-
-                    @Override
-                    public void onFail(Throwable e) {
-
-                    }
-                });
-                if (dialog.isShowing()) dialog.dismiss();
-            }
-
-
-        }
-
         addData();
 
     }
@@ -199,7 +139,7 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onTukarpoinFragmentInteraction();
+            mListener.onKuponSayaFragmentInteraction(uri);
         }
     }
 
@@ -226,11 +166,12 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
         dialog.setCancelable(false);
         dialog.show();
         if (NetworkUtils.isOnline(getActivity())){
-            authService.getAllKupon(new AuthService.KuponCallback() {
+
+            authService.getKuponByUser(session.getUserId(), new AuthService.TukarKuponCallback() {
                 @Override
-                public void onKuponSuccess(ArrayList<Kupon> daftarKupon) {
+                public void onSuccess(List<TukarKupon> tukarKuponList) {
                     kuponList.clear();
-                    kuponList.addAll(daftarKupon);
+                    kuponList.addAll(tukarKuponList);
                     adapter.notifyDataSetChanged();
                     if (dialog.isShowing()) {
                         dialog.dismiss();
@@ -238,13 +179,14 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
                 }
 
                 @Override
-                public void onKuponFail(Throwable e) {
+                public void onFail(Throwable e) {
                     if (dialog.isShowing()) {
                         dialog.dismiss();
                     }
                     DialogUtils.showToast("Gagal, mohon ulangi lagi", getActivity());
                 }
             });
+
 
         } else {
             if (dialog.isShowing()) {
@@ -269,6 +211,6 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onTukarpoinFragmentInteraction();
+        void onKuponSayaFragmentInteraction(Uri uri);
     }
 }

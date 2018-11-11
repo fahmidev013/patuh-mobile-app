@@ -61,8 +61,8 @@ public class AuthService {
     }
 
     public interface KuponCallback {
-        void onSuccess(List<Kupon> kuponList);
-        void onFail(Throwable e);
+        void onKuponSuccess(ArrayList<Kupon> daftarKupon);
+        void onKuponFail(Throwable e);
     }
 
     public interface PointCallback {
@@ -541,20 +541,54 @@ public class AuthService {
                 });
     }
 
-    public void getAllKupon(final AuthService.KuponCallback callback) {
+    public void getAllKupon(final KuponCallback callback) {
         RestAPI api = RestAPI.Factory.build(this.app);
         api.getAllKupon()
                 .subscribeOn(app.getSubscribeScheduler())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<Kupon>>() {
+                .subscribe(new Observer<ArrayList<Kupon>>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@NonNull List<Kupon> kuponList) {
-                        callback.onSuccess(kuponList);
+                    public void onNext(@NonNull ArrayList<Kupon> daftarKupon) {
+                        callback.onKuponSuccess(daftarKupon);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                        callback.onKuponFail(e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+
+    public void tukarKupon(String kuponId, String userId, final AuthService.DataCallback callback) {
+        RestAPI api = RestAPI.Factory.build(this.app);
+        api.postCoupon(kuponId, userId)
+                .subscribeOn(app.getSubscribeScheduler())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponeApiModel>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull ResponeApiModel dataCallback) {
+                        if (dataCallback.getMessageCode().equalsIgnoreCase("S")){
+                            callback.onSuccess(dataCallback);
+                        } else {
+                            callback.onFail(new Throwable());
+                        }
                     }
 
                     @Override
@@ -571,7 +605,7 @@ public class AuthService {
     }
 
 
-    public void tukarKupon(String uid, final AuthService.TukarKuponCallback callback) {
+    public void getKuponByUser(String uid, final AuthService.TukarKuponCallback callback) {
         RestAPI api = RestAPI.Factory.build(this.app);
         api.getKuponByUser(uid)
                 .subscribeOn(app.getSubscribeScheduler())
