@@ -184,6 +184,7 @@
                     android:src="@drawable/ic_action_heart_balck"/>
 
                 <ImageView
+                    android:id="@+id/btn_sharesocmed"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
                     android:layout_marginLeft="@dimen/size_15dp"

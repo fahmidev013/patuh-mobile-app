@@ -1,7 +1,11 @@
 package app.patuhmobile.module.Home;
 
 import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,6 +17,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -38,6 +44,7 @@ import app.patuhmobile.module.KuponSaya.KuponSayaFragment;
 import app.patuhmobile.module.Login.LoginActivity;
 import app.patuhmobile.module.Notif.NotifFragment;
 import app.patuhmobile.module.Profile.ProfileFragment;
+import app.patuhmobile.module.TukarPoin.ChildTukarFragment;
 import app.patuhmobile.module.TukarPoin.TukarPoinFragment;
 import app.patuhmobile.module.Ujian.UjianFragment;
 import app.patuhmobile.module.Upload.UploadFragment;
@@ -63,7 +70,8 @@ public class HomeActivity extends BaseActivity implements HomeView,
         ActivityCompat.OnRequestPermissionsResultCallback,
         DetailCeritaFragment.OnFragmentInteractionListener,
         KuponSayaFragment.OnFragmentInteractionListener,
-        PermissionUtil.PermissionResultCallback {
+        PermissionUtil.PermissionResultCallback,
+        ChildTukarFragment.OnFragmentInteractionListener {
 
 
     @Inject HomePresenter presenter;
@@ -100,6 +108,7 @@ public class HomeActivity extends BaseActivity implements HomeView,
     PermissionUtil permissionUtils;
     ArrayList<String> permissions=new ArrayList<>();
 
+    public static boolean isAppRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +126,38 @@ public class HomeActivity extends BaseActivity implements HomeView,
             HelperBridge.isFirstTimeDialog = false;
         }
         setPermissions();
+        listenNotif();
+    }
+
+    private void listenNotif() {
+
+
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        String channelId = "1";
+        String channel2 = "2";
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel(channelId,
+                    "Channel 1",NotificationManager.IMPORTANCE_HIGH);
+
+            notificationChannel.setDescription("This is BNT");
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setShowBadge(true);
+            notificationManager.createNotificationChannel(notificationChannel);
+
+            NotificationChannel notificationChannel2 = new NotificationChannel(channel2,
+                    "Channel 2",NotificationManager.IMPORTANCE_MIN);
+
+            notificationChannel.setDescription("This is bTV");
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setShowBadge(true);
+            notificationManager.createNotificationChannel(notificationChannel2);
+        }
     }
 
     @Override
@@ -397,6 +438,11 @@ public class HomeActivity extends BaseActivity implements HomeView,
 
     @Override
     public void onKuponSayaFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onChildTukarFragmentInteraction(Uri uri) {
 
     }
 }

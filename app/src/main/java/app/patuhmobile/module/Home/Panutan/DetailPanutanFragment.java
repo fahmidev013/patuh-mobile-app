@@ -2,6 +2,7 @@ package app.patuhmobile.module.Home.Panutan;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -12,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,7 +80,7 @@ public class DetailPanutanFragment extends BaseFragment implements DetailPanutan
     private AuthInfo session;
     private ImageView btnExit, toogleLike;
 
-    private ImageView picProfileHeader, picProfileComment, picContent, btnLapor;
+    private ImageView picProfileHeader, picProfileComment, picContent, btnLapor, btnSosmed;
     private TextView tvJudul, tvLokasi, tvKonten, btnKomentar;
 
     private EditText komentar;
@@ -158,6 +160,7 @@ public class DetailPanutanFragment extends BaseFragment implements DetailPanutan
         toogleLike = (ImageView) mView.findViewById(R.id.toogle_like);
         tvLokasi = (TextView) mView.findViewById(R.id.tv_lokasi);
         tvKonten = (TextView) mView.findViewById(R.id.tv_konten);
+        btnSosmed = (ImageView) mView.findViewById(R.id.btn_sharesocmed);
         picProfileHeader = (ImageView) mView.findViewById(R.id.picprofile);
         picContent = (ImageView) mView.findViewById(R.id.piccontent);
         picProfileComment = (ImageView) mView.findViewById(R.id.piccomment);
@@ -191,6 +194,19 @@ public class DetailPanutanFragment extends BaseFragment implements DetailPanutan
 
         });
         btnLapor.setOnClickListener(view1 -> showAlert());
+        btnSosmed.setOnClickListener(view1 -> {
+            /*Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_SUBJECT, judul);
+            intent.putExtra(Intent.EXTRA_TEXT, konten);
+            startActivity(Intent.createChooser(intent, "Share Artikel PATUH"));*/
+            final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, judul);
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Judul : " + judul + "\n" + "Artikel: " + konten + "\n Download Aplikasi PATUH : http://play.google.com/store/apps/details?id=" + getActivity().getApplicationContext().getPackageName());
+            emailIntent.setType("text/plain");
+            startActivity(Intent.createChooser(emailIntent, "Share Artikel PATUH"));
+        });
         checkLike(String.valueOf(mArtikel.getId()), session.getUserId());
         final int[] button01pos = {0};
         /*toogleLike.setOnClickListener(new View.OnClickListener() {

@@ -5,6 +5,7 @@
 
     <!-- Normal android permissions. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -22,15 +23,18 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
-        tools:replace="android:icon">
-
+        tools:replace="android:icon"
+        tools:ignore="GoogleAppIndexingWarning">
         <!--<meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDNZBa6IJQ6TA5IXbBEUY366UtlHF_hJnY"/>-->
 
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDNZBa6IJQ6TA5IXbBEUY366UtlHF_hJnY" />
+        <!--<meta-data android:name="com.google.android.geo.API_KEY"-->
+            <!--android:value="AIzaSyDNZBa6IJQ6TA5IXbBEUY366UtlHF_hJnY" />-->
 
+        <!--<meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_login"/>-->
 
         <activity
             android:name=".module.Login.LoginActivity"
@@ -57,6 +61,30 @@
         <activity android:name=".module.DaftarActivity" />
         <activity android:name=".module.LupaSandiActivity" />
         <activity android:name=".module.MapActivity"></activity>
+
+
+        <service
+            android:name=".firebase.MyFirebaseMessagingService"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service android:name=".firebase.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorTransparent" />
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

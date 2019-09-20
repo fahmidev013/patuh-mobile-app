@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "341730787576",
+    "firebase_url": "https://patuhapp-b4944.firebaseio.com",
+    "project_id": "patuhapp-b4944",
+    "storage_bucket": "patuhapp-b4944.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341730787576:android:c5950fe96bf721df",
+        "android_client_info": {
+          "package_name": "app.patuhmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341730787576-dehi7pg96kcenork1ot8m40fr5p5uphu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.patuhmobile",
+            "certificate_hash": "9b498686db8556be07db6654225a20883c63ffd4"
+          }
+        },
+        {
+          "client_id": "341730787576-g1gst9ih8acejn0qie07e5aa66cjol57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIbETS0S5Ov5FNEZETREbCN62gHqvZSOg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341730787576-g1gst9ih8acejn0qie07e5aa66cjol57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

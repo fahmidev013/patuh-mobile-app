@@ -1,6 +1,8 @@
 package app.patuhmobile.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Fahmi Hakim on 17/09/2018.
@@ -47,5 +49,17 @@ public class Kupon implements Serializable {
     public String getValidUntil() {
         return ValidUntil;
     }
+
+
+    /*public static List<Kupon> prepareDesserts(String[] names, String[] descriptions) {
+        List<Kupon> desserts = new ArrayList<>(names.length);
+
+        for (int i = 0; i < names.length; i++) {
+            Kupon dessert = new Kupon(names[i], descriptions[i]);
+            desserts.add(dessert);
+        }
+
+        return desserts;
+    }*/
 
 }

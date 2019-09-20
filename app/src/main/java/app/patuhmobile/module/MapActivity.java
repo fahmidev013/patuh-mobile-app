@@ -5,22 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 
-import com.codemybrainsout.placesearch.PlaceSearchDialog;
-import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.jota.autocompletelocation.AutoCompleteLocation;
 
 import app.patuhmobile.R;
 
 
 public class MapActivity extends FragmentActivity
-        implements OnMapReadyCallback, AutoCompleteLocation.AutoCompleteLocationListener {
+        implements OnMapReadyCallback{ //, AutoCompleteLocation.AutoCompleteLocationListener {
 
 
     GoogleMap mMap;
@@ -41,7 +38,7 @@ public class MapActivity extends FragmentActivity
         autoCompleteLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PlaceSearchDialog placeSearchDialog = new PlaceSearchDialog.Builder(MapActivity.this)
+                /*PlaceSearchDialog placeSearchDialog = new PlaceSearchDialog.Builder(MapActivity.this)
                         .setLocationNameListener(new PlaceSearchDialog.LocationNameListener() {
                             @Override
                             public void locationName(String locationName) {
@@ -49,7 +46,7 @@ public class MapActivity extends FragmentActivity
                             }
                         })
                         .build();
-                placeSearchDialog.show();
+                placeSearchDialog.show();*/
             }
         });
     }
@@ -61,13 +58,13 @@ public class MapActivity extends FragmentActivity
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madrid, 16));
     }
 
-    @Override public void onTextClear() {
-        mMap.clear();
-    }
-
-    @Override public void onItemSelected(Place selectedPlace) {
-        addMapMarker(selectedPlace.getLatLng());
-    }
+//    @Override public void onTextClear() {
+//        mMap.clear();
+//    }
+//
+//    @Override public void onItemSelected(Place selectedPlace) {
+//        addMapMarker(selectedPlace.getLatLng());
+//    }
 
     private void addMapMarker(LatLng latLng) {
         mMap.clear();

@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,9 +58,9 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
 
     List<Kupon> kuponList = new ArrayList<>();
     private AuthService authService;
+    ProgressDialog dialog;
     private App mApp;
     private AuthInfo session;
-    ProgressDialog dialog;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -72,6 +74,7 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
     private TextView tvUser, tvPoin;
     private Button btnKuponSaya;
     private ImageView imgPic;
+    private RelativeLayout fragContainer;
     AdapterRecview adapter;
 
     public TukarPoinFragment() {
@@ -128,32 +131,19 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
         tvPoin = (TextView) mView.findViewById(R.id.tukarpoin_pointv);
         imgPic = (ImageView) mView.findViewById(R.id.tukarpoin_picimgv);
         btnKuponSaya = (Button) mView.findViewById(R.id.btn_kupon_saya);
+        fragContainer = (RelativeLayout) mView.findViewById(R.id.child_fragcontainer);
         btnKuponSaya.setOnClickListener(view1 -> mListener.onTukarpoinFragmentInteraction());
         mRecycleViewKupon = (RecyclerView) mView.findViewById(R.id.rv_kupon);
         mRecycleViewKupon.setHasFixedSize(true);
         adapter = new AdapterRecview(kuponList, new AdapterRecview.KuponAdapterCallback() {
             @Override
             public void onClicked(Kupon kupon, int position) {
-                dialog.setMessage("Menukar kupon, mohon menunggu..");
-                dialog.setCancelable(false);
-                dialog.show();
-                authService.tukarKupon(kupon.getId(), session.getUserId(), new AuthService.DataCallback() {
-                    @Override
-                    public void onSuccess(ResponeApiModel responeRegisterModel) {
-                        if (dialog.isShowing()) {
-                            dialog.dismiss();
-                        }
-                        Toast.makeText(getActivity(), "Berhasil, kode kupon" + responeRegisterModel.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFail(Throwable e) {
-                        if (dialog.isShowing()) {
-                            dialog.dismiss();
-                        }
-                        Toast.makeText(getActivity(), "GAGAL!!" + e, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                ChildTukarFragment fragmentTukar = ChildTukarFragment.newInstance(kupon);
+                FragmentTransaction ft =  getActivity().getSupportFragmentManager().beginTransaction();
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                ft.replace(android.R.id.content, fragmentTukar);
+                ft.addToBackStack(null);
+                ft.commit();
             }
         });
         mLayoutManager = new LinearLayoutManager(getActivity());
@@ -195,6 +185,9 @@ public class TukarPoinFragment extends BaseFragment implements TukarPoinView {
         addData();
 
     }
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

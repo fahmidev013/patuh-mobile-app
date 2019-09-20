@@ -7,6 +7,10 @@
     <string name="title_panutan">Panutan</string>
     <string name="title_cerita">Cerita</string>
 
+
+    <string name="google_login">341730787576-g82taae25d0o51aejpvj1s2kcc35l0kf.apps.googleusercontent.com</string>
+    <!--<string name="server_client_secret">XVS0p9AjUxXu530YcCB6AXnD</string>-->
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

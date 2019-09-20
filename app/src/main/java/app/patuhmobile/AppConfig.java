@@ -13,7 +13,7 @@ public class AppConfig {
     public static final String FRAG_NAV_SPG_SETTING = "SETTING";
 
     //- NGROK
-    public static final String API_BASE_URL = "https://patuhapp.azurewebsites.net/api/";
+    public static final String API_BASE_URL = "http://8e895052.ngrok.io/api/";
 
     //- Prod
     //public static final String API_BASE_URL = "http://patuhapidev-env.fmzqmjeba2.ap-southeast-1.elasticbeanstalk.com/api/";
@@ -21,7 +21,7 @@ public class AppConfig {
     public static final String USER_AUTH_INFO = "User Auth Info";
 
     //- NGROK
-    private String apiBaseUrl = "https://patuhapp.azurewebsites.net/api/"; //http://patuhapidev-env.fmzqmjeba2.ap-southeast-1.elasticbeanstalk.com/api/";
+    private String apiBaseUrl = "http://8e895052.ngrok.io/api/"; //http://patuhapidev-env.fmzqmjeba2.ap-southeast-1.elasticbeanstalk.com/api/";
 
     //- Prod
     //private String apiBaseUrl = "http://patuhapidev-env.fmzqmjeba2.ap-southeast-1.elasticbeanstalk.com/api/"; //http://patuhapidev-env.fmzqmjeba2.ap-southeast-1.elasticbeanstalk.com/api/";

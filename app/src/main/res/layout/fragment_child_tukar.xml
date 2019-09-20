@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/htab_maincontent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/size_15dp"
+                    android:tint="@color/colorBlack"
+                    android:src="@drawable/ic_keyboard_arrow_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="TUKAR POIN"
+                    android:textSize="@dimen/text_size19"
+                    android:layout_gravity="center"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_5dp"
+                    android:layout_weight="0.7"
+                    android:background="@color/palleteaccentcyan"/>
+
+                <View
+                    android:layout_weight="1.3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_5dp"
+                    android:background="@color/palleteaccentpurpledark"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/htab_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="@dimen/size_20dp"
+                    android:background="@drawable/patuhcontent"
+                    android:scaleType="centerCrop"/>
+
+                <Button
+                    android:id="@+id/btn_tukar_poin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/size_20dp"
+                    android:background="@color/palleteaccentcyan"
+                    android:text="TUKAR"
+                    android:padding="@dimen/size_10dp"
+                    android:textSize="20sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="60dp"/>
+
+
+                <TextView
+                    android:id="@+id/poin_tukar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/size_5dp"
+                    android:layout_marginTop="90dp"
+                    android:textColor="@color/white"
+                    android:text="100 POIN"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/poin_tukar"
+                    android:layout_marginLeft="@dimen/size_5dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="Gratis 5 liter PERTAMAX"/>
+
+            </RelativeLayout>
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:alpha="0.3"-->
+                <!--android:background="@android:color/black" />-->
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/htab_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:tabBackground="@color/palletebgpink"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabSelectedTextColor="@android:color/white"
+                app:tabTextColor="@color/palletepurpledark"/>
+
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/htab_viewpager"
+                android:layout_width="match_parent"
+                android:background="@color/palleteaccentcyan"
+                android:layout_height="500dp" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

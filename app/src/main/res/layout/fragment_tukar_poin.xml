@@ -50,6 +50,12 @@
             android:background="@color/palleteaccentpurpledark"/>
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/child_fragcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -88,7 +94,7 @@
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size_25sp"
-                android:text="48.250"/>
+                android:text="-"/>
 
             <Button
                 android:id="@+id/btn_kupon_saya"
